@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo| Home</title>
+    <!-- fab_icon -->
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+    <!-- daisyUi-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- daisyUi theme -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <!--tailwind connections -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Css  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body class="min-h-screen max-w-md bg-base-200 mx-auto">
+
+    <section class="max-w-md h-20 flex items-center justify-between mx-2 border-b border-b-gray-500/50">
+
+        <div class="left flex gap-4">
+
+            <div class="logo w-15 h-12">
+                <img src="assets/Logo.png" class="w-full h-full">
+            </div>
+
+            <div class="Balance">
+                <h1>$<span id="balance">4500</span></h1>
+                <h2>Available Balance</h2>
+
+            </div>
+        </div>
+
+
+
+        <div class="right">
+            <a href="loging.html"><button class="btn btn-primary">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <h1>Log out</h1>
+                </button>
+            </a>
+        </div>
+    </section>
+
+    <section class="max-w-md mx-7 mt-6">
+        <h1 class="text-3xl font-bold">Welcome to Payoo</h1>
+        <h2 class="text-[14px]">Enjoy easy and convenient financial services with us. Cashout
+            charge is
+            low and </h2>
+
+        <div class="card-container max-w-md h-[200px] grid grid-cols-3 justify-center content-center gap-2
+">
+            <button class="flex flex-col justify-center items-center btn p-4  h-20 rounded-2xl "
+                onclick="showHide('admoneysection')">
+                <img src="assets/opt-1.png" alt="">
+                <h1>Add money</h1>
+            </button>
+            <button class="flex flex-col justify-center items-center btn p-4 h-20 rounded-2xl"
+                onclick="showHide('cashoutsection')">
+                <img src="assets/opt-2.png" alt="">
+                <h1 id="cashout-btn">Cash out</h1>
+            </button>
+            <button class="flex flex-col justify-center items-center btn p-4 h-20 rounded-2xl">
+                <img src="assets/opt-3.png" alt="">
+                <h1>Transfer money</h1>
+            </button>
+            <button class="flex flex-col justify-center items-center btn p-4 h-20 rounded-2xl">
+                <img src="assets/opt-4.png" alt="">
+                <h1>Get bonus</h1>
+            </button>
+            <button class="flex flex-col justify-center items-center btn p-4 h-20 rounded-2xl">
+                <img src="assets/opt-5.png" alt="">
+                <h1>Pay bill</h1>
+            </button>
+            <button class="flex flex-col justify-center items-center btn p-4 h-20 rounded-2xl">
+                <img src="assets/opt-6.png" alt="">
+                <h1>Transactions</h1>
+            </button>
+        </div>
+
+    </section>
+
+    <!-- cashout section -->
+
+    <section id="cashoutsection">
+
+        <div class="form pt-10 ">
+            <fieldset class="fieldset bg-base-300 border-base-300 rounded-3xl w-xs border p-7 mx-auto ">
+                <legend>
+                    <h1 class="text-[18px] font-semibold">Cashout</h1>
+                </legend>
+                <label class="label text-neutral">Agent number</label>
+                <input id="agentnum" type="tel" class="input rounded-full mb-2.5" placeholder="Enter 11 digit number"
+                    maxlength="11" />
+
+                <label class="label text-neutral">Amount</label>
+                <input id="cashout_amount" type="tel" class="input rounded-full " placeholder="Enter cashout amount"
+                    maxlength="4" />
+                <label class="label text-neutral">Pin number</label>
+                <input id="user_pin" type="password" class="input rounded-full " placeholder="Enter 4 digit pin"
+                    maxlength="4" />
+
+                <button id="cashoutbutton" class="btn btn-primary mt-4 rounded-full">Cashout</button>
+            </fieldset>
+        </div>
+    </section>
+
+    <!-- add money-->
+    <section id="admoneysection">
+
+        <div class="form pt-10 ">
+            <fieldset class="fieldset bg-base-300 border-base-300 rounded-3xl w-xs border p-7 mx-auto ">
+                <legend>
+                    <h1 class="text-[18px] font-semibold">Add money</h1>
+                </legend>
+                <!-- select option -->
+                <fieldset class="fieldset">
+                    <legend class="fieldset-legend">Select a bank</legend>
+                    <select class="select rounded-full text-gray-500 " id="selectcontainer">
+                        <option disabled selected value="">Select bank</option>
+                        <option value="dutchbangla">Dutch bangla bank ltd</option>
+                        <option value="islami">Islami bank ltd</option>
+                        <option value="asia">Bank asia</option>
+                        <option value="brac">Brac bank ltd</option>
+                    </select>
+
+                </fieldset>
+
+                <label class="label text-neutral">Bank account number</label>
+                <input id="bank_num" type="tel" class="input rounded-full mb-2.5"
+                    placeholder="Enter 11 digit account number" maxlength="11" />
+
+                <label class="label text-neutral">Amount to add</label>
+                <input id="addedamount" type="tel" class="input rounded-full " placeholder="Add amount to withdraw"
+                    maxlength="4" />
+                <label class="label text-neutral">Pin number</label>
+                <input id="addpin" type="password" class="input rounded-full " placeholder="Enter 4 digit pin "
+                    maxlength="4" />
+
+                <button id="addmoneybtn" class="btn btn-primary mt-4 rounded-full">Add money</button>
+            </fieldset>
+        </div>
+    </section>
+
+
+
+
+
+    <script src="scripts/machine.js"></script>
+    <script src="scripts/cashout.js"></script>
+    <script src="scripts/home.js"></script>
+    <script src="scripts/addmoney.js"></script>
+</body>
+
+</html>
